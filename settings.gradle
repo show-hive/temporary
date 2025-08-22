@@ -1,0 +1,15 @@
+rootProject.name = 'show-hive'
+
+// boot
+include 'showhive-boot:boot-member'
+include 'showhive-boot:boot-performance'
+include 'showhive-boot:boot-reservation'
+
+// data
+include 'showhive-data:data-member'
+include 'showhive-data:data-performance'
+include 'showhive-data:data-reservation'
+
+// infra
+include 'showhive-infra:infra-external'
+include 'showhive-infra:infra-persistence'
