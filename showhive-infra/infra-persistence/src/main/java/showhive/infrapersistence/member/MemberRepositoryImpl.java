@@ -18,4 +18,9 @@ public class MemberRepositoryImpl implements MemberRepository {
         jpaMemberRepository.save(member);
     }
 
+    @Override
+    public Member findById(long memberId) {
+        return jpaMemberRepository.findById(memberId)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 회원입니다."));
+    }
 }

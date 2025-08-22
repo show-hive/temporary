@@ -9,7 +9,8 @@ import jakarta.persistence.Table;
 @Table
 public class Member {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
@@ -25,4 +26,11 @@ public class Member {
         return new Member(name);
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

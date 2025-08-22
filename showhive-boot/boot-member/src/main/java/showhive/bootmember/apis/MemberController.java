@@ -1,10 +1,15 @@
 package showhive.bootmember.apis;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import showhive.bootmember.apis.dto.MemberResponse;
 import showhive.bootmember.apis.dto.MemberSignUpRequest;
+import showhive.bootmember.application.MemberFindUseCase;
 import showhive.bootmember.application.MemberSignUpUseCase;
 
 @RestController
@@ -12,14 +17,22 @@ import showhive.bootmember.application.MemberSignUpUseCase;
 public class MemberController {
 
     private final MemberSignUpUseCase memberSignUpUseCase;
+    private final MemberFindUseCase memberFindUseCase;
 
-    public MemberController(MemberSignUpUseCase memberSignUpUseCase) {
+    public MemberController(MemberSignUpUseCase memberSignUpUseCase, MemberFindUseCase memberFindUseCase) {
         this.memberSignUpUseCase = memberSignUpUseCase;
+        this.memberFindUseCase = memberFindUseCase;
     }
 
     @PostMapping
-    public ResponseEntity<Void> createMember(MemberSignUpRequest request) {
+    public ResponseEntity<Void> createMember(@RequestBody MemberSignUpRequest request) {
         memberSignUpUseCase.signUp(request.toCommand());
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{memberId}")
+    public ResponseEntity<MemberResponse> findMember(@PathVariable long memberId) {
+        MemberResponse response = memberFindUseCase.findMember(memberId);
+        return ResponseEntity.ok(response);
     }
 }
