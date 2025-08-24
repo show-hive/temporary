@@ -1,5 +1,6 @@
 package showhive.bootmember.apis;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,15 +15,11 @@ import showhive.bootmember.application.MemberSignUpUseCase;
 
 @RestController
 @RequestMapping("member")
+@RequiredArgsConstructor
 public class MemberController {
 
     private final MemberSignUpUseCase memberSignUpUseCase;
     private final MemberFindUseCase memberFindUseCase;
-
-    public MemberController(MemberSignUpUseCase memberSignUpUseCase, MemberFindUseCase memberFindUseCase) {
-        this.memberSignUpUseCase = memberSignUpUseCase;
-        this.memberFindUseCase = memberFindUseCase;
-    }
 
     @PostMapping
     public ResponseEntity<Void> createMember(@RequestBody MemberSignUpRequest request) {
