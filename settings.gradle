@@ -6,10 +6,11 @@ include 'showhive-boot:boot-performance'
 include 'showhive-boot:boot-reservation'
 
 // data
-include 'showhive-data:data-member'
-include 'showhive-data:data-performance'
-include 'showhive-data:data-reservation'
+include 'showhive-data:data'
 
 // infra
 include 'showhive-infra:infra-external'
 include 'showhive-infra:infra-persistence'
+
+// config
+include 'showhive-config:config'
