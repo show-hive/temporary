@@ -1,8 +1,8 @@
 package showhive.infrapersistence.member;
 
 import org.springframework.stereotype.Repository;
-import showhive.datamember.domain.Member;
-import showhive.datamember.domain.MemberRepository;
+import showhive.data.member.domain.Member;
+import showhive.data.member.repository.MemberRepository;
 
 @Repository
 public class MemberRepositoryImpl implements MemberRepository {

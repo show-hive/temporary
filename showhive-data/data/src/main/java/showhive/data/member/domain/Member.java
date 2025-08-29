@@ -1,4 +1,4 @@
-package showhive.datamember.domain;
+package showhive.data.member.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
 package showhive.bootmember.apis.dto;
 
-import showhive.datamember.domain.Member;
+import showhive.data.member.domain.Member;
 
 public record MemberResponse(
         long id,

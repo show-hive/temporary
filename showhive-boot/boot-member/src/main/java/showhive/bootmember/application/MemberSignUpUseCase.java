@@ -3,8 +3,8 @@ package showhive.bootmember.application;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import showhive.bootmember.application.command.MemberSignUpCommand;
-import showhive.datamember.domain.Member;
-import showhive.datamember.domain.MemberRepository;
+import showhive.data.member.domain.Member;
+import showhive.data.member.repository.MemberRepository;
 
 @Service
 @RequiredArgsConstructor
