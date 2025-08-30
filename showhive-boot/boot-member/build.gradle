@@ -5,7 +5,7 @@ jar { enabled = false }
 
 dependencies {
 
-    implementation project(':showhive-config:config')
+    implementation project(':showhive-common:config')
     implementation project(':showhive-data:data')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'

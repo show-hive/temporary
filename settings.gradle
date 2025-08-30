@@ -9,8 +9,8 @@ include 'showhive-boot:boot-reservation'
 include 'showhive-data:data'
 
 // infra
-include 'showhive-infra:infra-external'
+include 'showhive-infra:infra-import'
 include 'showhive-infra:infra-persistence'
 
 // config
-include 'showhive-config:config'
+include 'showhive-common:config'
