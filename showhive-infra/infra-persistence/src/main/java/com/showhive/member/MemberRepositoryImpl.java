@@ -1,5 +1,7 @@
 package com.showhive.member;
 
+import com.showhive.exception.member.MemberErrorCode;
+import com.showhive.exception.member.MemberException;
 import org.springframework.stereotype.Repository;
 import com.showhive.member.domain.Member;
 import com.showhive.member.repository.MemberRepository;
@@ -21,6 +23,6 @@ public class MemberRepositoryImpl implements MemberRepository {
     @Override
     public Member findById(long memberId) {
         return jpaMemberRepository.findById(memberId)
-                .orElseThrow(() -> new RuntimeException("존재하지 않는 회원입니다."));
+                .orElseThrow(() -> new MemberException(MemberErrorCode.MEMBER_NOT_FOUND));
     }
 }
